@@ -24,7 +24,7 @@ Or you could just download the files on GitHub.
 # How to use
 
 ```javascript
-var izziSticky = new izziSticky();
+var izziSticky = new IzziSticky();
 izziSticky.init(sticky);
 ```
 
@@ -35,7 +35,7 @@ All you need is to define `sticky` as the element you want to be sticky. Check t
 You can also pass options to the plugin to change it’s default settings, like this:
 
 ```javascript
-var izziSticky = new izziSticky({
+var izziSticky = new IzziSticky({
 	heightValue: window.innerHeight
 	classIsSticky: 'is-sticky'
 });
