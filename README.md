@@ -10,13 +10,13 @@ A lightweight and simple plugin to have sticky stuff.
 
 Using `npm` command, it’s as simple as this :
 ```bash
-npm i -D modern-form
+npm i -D izzi-sticky
 ```
 
 If you use bower, you can just do
 
 ```bash
-$ bower i modern-form
+$ bower i izzi-sticky
 ```
 
 Or you could just download the files on GitHub.

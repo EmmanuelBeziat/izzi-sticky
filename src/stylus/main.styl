@@ -1,0 +1,92 @@
+/**
+ * Variables
+ **/
+ $font-stack-common = "Source Sans Pro", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif
+ $font-stack-title = $font-stack-common
+
+ $color-light = #eee
+ $color-home = #9bc8e0
+ $color-details = #eecf93
+ $color-others = #99c18e
+ $color-menu = #323537
+
+/**
+ * Base
+ **/
+body
+	margin 0
+	font 400 16px/1.5 $font-stack-common
+
+a
+	transition .2s ease-in-out
+
+/**
+ * Sections
+ **/
+.section
+	box-sizing border-box
+	padding 6em 0 4em
+	text-align center
+	min-height 100vh
+
+.section__title
+	font 200 4em/1.5 $font-stack-title
+	text-transform lowercase
+	margin 0 0 .4em
+
+.home
+	background $color-home
+	padding 4em 0 6em
+
+.details
+	background $color-details
+
+.others
+	background $color-others
+
+/**
+ * Header
+ **/
+.js-izzi-sticky
+	bottom 0
+	position absolute
+	left 0
+	right 0
+
+.js-izzi-sticky.is-sticky
+	position fixed
+	top 0
+	bottom auto
+
+.demo-header
+	background $color-menu
+	padding 1.25em 4em
+	display flex
+	justify-content space-between
+	align-items center
+
+.demo-header__title
+	margin 0
+	color $color-light
+	text-decoration none
+	font 700 1.5em/1.25 $font-stack-title
+
+	&:hover
+	&:focus
+		color $color-others
+
+/**
+ * Navigation
+ **/
+.demo-menu__item
+	color $color-light
+	text-decoration none
+	text-transform uppercase
+	font 300 1.25em/1.25 $font-stack-common
+
+	&:hover
+	&:focus
+		color $color-others
+
+.demo-menu__item + .demo-menu__item
+	margin-left 1em

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Izzi Sticky</title>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+
+		<div class="demo">
+			<header class="demo-header js-izzi-sticky">
+				<a href="#" class="demo-header__title">MyWebsite</a>
+
+				<nav class="demo-menu">
+					<a href="#home" class="demo-menu__item">Home</a>
+					<a href="#details" class="demo-menu__item">Details</a>
+					<a href="#others" class="demo-menu__item">Others</a>
+				</nav>
+			</header>
+
+			<main class="demo-main">
+
+				<section class="section home" id="home">
+					<h1 class="section__title">Home</h1>
+				</section>
+
+				<section class="section details" id="details">
+					<h1 class="section__title">Details</h1>
+				</section>
+
+				<section class="section others" id="others">
+					<h1 class="section__title">Others</h1>
+				</section>
+
+			</main>
+		</div>
+
+		<script src="../dist/izzi-sticky.min.js"></script>
+		<script>
+			var stickyMenu = document.querySelector('.js-izzi-sticky');
+
+			var izziSticky = new IzziSticky({
+				heightValue: window.innerHeight - stickyMenu.offsetHeight
+			});
+			izziSticky.init(stickyMenu);
+		</script>
+	</body>
+</html>
