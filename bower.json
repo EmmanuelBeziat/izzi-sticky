@@ -1,0 +1,29 @@
+{
+  "name": "IzziSticky",
+  "version": "1.0.1",
+  "description": "A lightweight and simple plugin to have sticky stuff.",
+  "main": "dist/js/izzi-sticky.min.js",
+  "authors": [
+    "EmmanuelBeziat"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sticky",
+    "javascript"
+  ],
+  "homepage": "https://github.com/EmmanuelBeziat/js-izzi-sticky",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmmanuelBeziat/js-izzi-sticky"
+  },
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests",
+      "demo",
+      "src",
+      "gulpfile.js"
+    ]
+}
