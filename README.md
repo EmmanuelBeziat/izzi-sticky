@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-1.1.1-orange.svg?style=flat-square)
+![version](https://img.shields.io/badge/version-1.0.1-orange.svg?style=flat-square)
 
 # Izzi Sticky
 
@@ -79,3 +79,7 @@ izziSticky.init(sticky);
 	</tbody>
 </table>
 
+# TODO
+
+* Add constraint element (an element to move within)
+* Add the possibility to define options in html data attribute
