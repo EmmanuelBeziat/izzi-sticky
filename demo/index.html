@@ -8,7 +8,7 @@
 	<body>
 
 		<div class="demo">
-			<header class="demo-header js-izzi-sticky">
+			<header class="demo-header" data-sticky>
 				<a href="#" class="demo-header__title">MyWebsite</a>
 
 				<nav class="demo-menu">
@@ -37,8 +37,7 @@
 
 		<script src="../dist/izzi-sticky.min.js"></script>
 		<script>
-			var stickyMenu = document.querySelector('.js-izzi-sticky');
-
+			var stickyMenu = document.querySelector('[data-sticky]');
 			var izziSticky = new IzziSticky({
 				heightValue: window.innerHeight - stickyMenu.offsetHeight
 			});
