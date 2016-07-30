@@ -1,6 +1,6 @@
 /*!
  * A lightweight and simple plugin to have sticky stuff.
- * Version : 1.0.0
+ * Version : 1.0.1
  * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/js-izzi-sticky
  **/
@@ -71,10 +71,12 @@
 
 		if (element) {
 			window.addEventListener('scroll', function() {
-				if (window.pageYOffset >= plugin.options.heightValue) {
+				var hasStickyClass = element.classList.contains(plugin.options.classIsSticky);
+
+				if (window.pageYOffset >= plugin.options.heightValue && !hasStickyClass) {
 					stickApply(element, plugin);
 				}
-				else {
+				else if (window.pageYOffset < plugin.options.heightValue && hasStickyClass) {
 					stickRemove(element, plugin);
 				}
 			});
