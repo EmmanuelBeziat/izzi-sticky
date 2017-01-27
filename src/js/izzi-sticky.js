@@ -1,86 +1,118 @@
 /*!
  * A lightweight and simple plugin to have sticky stuff.
- * Version : 1.0.1
+ * Version : 2.0.0
  * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/js-izzi-sticky
  **/
-(function() {
 
-	this.IzziSticky = function() {
-		var defaults = {
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define([], factory);
+	} else if (typeof module === 'object' && module.exports) {
+		// Node. Does not work with strict CommonJS, but
+		// only CommonJS-like environments that support module.exports,
+		// like Node.
+		module.exports = factory();
+	} else {
+		// Browser globals (root is window)
+		root.IzziSticky = factory();
+	}
+}(this, function () {
+	var IzziSticky = function (el, options){
+		'use strict';
+
+		var self = Object.create(IzziSticky.prototype);
+
+		/**
+		 * Default settings
+		 */
+		self.options = {
 			heightValue: 0,
 			classIsSticky: 'is-sticky',
 			onStick: null,
 			onUnstick: null
 		};
 
-		this.element = null;
-		this.options = extendDefaults(defaults, arguments[0]);
-	}
+		/**
+		 * User defined options
+		 */
+		if (options) {
+			Object.keys(options).forEach(function (key){
+				self.options[key] = options[key];
+			});
+		}
 
-	/**
-	 * Main functino called by the plugin
-	 * @param  {DOM object} element [The form to be set with the plugin]
-	 */
-	IzziSticky.prototype.init = function(element) {
-		this.element = element;
+		/**
+		 * By default, search for an item with 'data-sticky' attribute
+		 */
+		if (!el) {
+			self.sticky = document.querySelector('[data-sticky]');
+		}
 
-		build.call(this);
-	}
+		if (el && 'string' === typeof el) {
+			self.sticky = document.querySelector(el);
+		}
+		else if (el && 'object' === typeof el) {
+			self.sticky = el;
+		}
+		else {
+			throw new Error('[IzziSticky] Unable to get a valid object to stick');
+		}
 
-	/**
-	 * Add classe on the sticky element
-	 * Allow callback onStick
-	 */
-	function stickApply(element, plugin) {
-		element.classList.add(plugin.options.classIsSticky);
-		plugin.options.onStick;
-	}
+		var init = function () {
+			build.call(this);
+		};
 
-	/**
-	 * Remove classes on the sticky element
-	 * Allow callback onUnstick
-	 */
-	function stickRemove(element, plugin) {
-		element.classList.remove(plugin.options.classIsSticky);
-		plugin.options.onUnstick;
-	}
+		/**
+		 * Add classe on the sticky element
+		 * Allow callback onStick
+		 */
+		function stickApply(element) {
+			element.classList.add(self.options.classIsSticky);
 
-	/**
-	 * Extend defaults properties with user options
-	 */
-	function extendDefaults(source, properties) {
-		var property;
-
-		for (property in properties) {
-			if (properties.hasOwnProperty(property)) {
-				source[property] = properties[property];
+			// callback
+			if ('function' === typeof self.options.onStick) {
+				self.options.onStick();
 			}
 		}
 
-		return source;
-	}
+		/**
+		 * Remove classes on the sticky element
+		 * Allow callback onUnstick
+		 */
+		function stickRemove(element) {
+			element.classList.remove(self.options.classIsSticky);
 
-	/**
-	 * Main build function
-	 * Fire events when the page offset is higher than the value
-	 */
-	function build() {
-		var plugin = this;
-		var element = this.element;
-
-		if (element) {
-			window.addEventListener('scroll', function() {
-				var hasStickyClass = element.classList.contains(plugin.options.classIsSticky);
-
-				if (window.pageYOffset >= plugin.options.heightValue && !hasStickyClass) {
-					stickApply(element, plugin);
-				}
-				else if (window.pageYOffset < plugin.options.heightValue && hasStickyClass) {
-					stickRemove(element, plugin);
-				}
-			});
+			// callback
+			if ('function' === typeof self.options.onUnstick) {
+				self.options.onUnstick();
+			}
 		}
-}
 
-})();
+		/**
+		 * Main build function
+		 * 1. Add the content class when loading, if the input's value is already defined
+		 * 2. Fire events when focus and blur happen
+		 */
+		function build() {
+			if (self.sticky) {
+				window.addEventListener('scroll', function() {
+					var hasStickyClass = self.sticky.classList.contains(self.options.classIsSticky);
+
+					if (window.pageYOffset >= self.options.heightValue && !hasStickyClass) {
+						stickApply(self.sticky);
+					}
+					else if (window.pageYOffset < self.options.heightValue && hasStickyClass) {
+						stickRemove(self.sticky);
+					}
+				});
+			}
+		}
+
+
+		init();
+		return self;
+	};
+	return IzziSticky;
+}));

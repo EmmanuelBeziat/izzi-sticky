@@ -24,22 +24,26 @@ Or you could just download the files on GitHub.
 # How to use
 
 ```javascript
-var izziSticky = new IzziSticky();
-izziSticky.init(sticky);
+var izziSticky = new IzziSticky('[data-sticky');
 ```
 
-All you need is to define `sticky` as the element you want to be sticky. Check the demo files for an example.
+```html
+<div data-sticky>This item will be sticky</div>
+```
+
+You can pass either a html object, or a selector in a string.
+
+Check the demo files for an example.
 
 # Options
 
 You can also pass options to the plugin to change it’s default settings, like this:
 
 ```javascript
-var izziSticky = new IzziSticky({
-	heightValue: window.innerHeight
+var izziSticky = new IzziSticky('[data-sticky]', {
+	heightValue: 200 // 200px
 	classIsSticky: 'is-sticky'
 });
-izziSticky.init(sticky);
 ```
 
 <table>

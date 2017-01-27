@@ -38,10 +38,12 @@
 		<script src="../dist/izzi-sticky.min.js"></script>
 		<script>
 			var stickyMenu = document.querySelector('[data-sticky]');
-			var izziSticky = new IzziSticky({
-				heightValue: window.innerHeight - stickyMenu.offsetHeight
+			var izziSticky = new IzziSticky(stickyMenu, {
+				heightValue: window.innerHeight - stickyMenu.offsetHeight,
+				onStick: function () {
+					console.log('Stick happened!')
+				}
 			});
-			izziSticky.init(stickyMenu);
 		</script>
 	</body>
 </html>
