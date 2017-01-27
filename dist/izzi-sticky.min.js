@@ -1,6 +1,6 @@
 /*!
  * A lightweight and simple plugin to have sticky stuff.
- * Version : 2.0.0
+ * Version : 2.0.1
  * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/js-izzi-sticky
  **/
