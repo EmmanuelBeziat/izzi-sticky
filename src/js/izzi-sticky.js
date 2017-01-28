@@ -1,6 +1,6 @@
 /*!
  * A lightweight and simple plugin to have sticky stuff.
- * Version : 2.0.1
+ * Version : 2.0.2
  * Emmanuel B. (www.emmanuelbeziat.com)
  * https://github.com/EmmanuelBeziat/js-izzi-sticky
  **/
@@ -60,42 +60,38 @@
 			throw new Error('[IzziSticky] Unable to get a valid object to stick');
 		}
 
-		var init = function () {
-			build.call(this);
-		};
-
 		/**
 		 * Add classe on the sticky element
 		 * Allow callback onStick
 		 */
-		function stickApply(element) {
+		var stickApply = function (element) {
 			element.classList.add(self.options.classIsSticky);
 
 			// callback
 			if ('function' === typeof self.options.onStick) {
 				self.options.onStick();
 			}
-		}
+		};
 
 		/**
 		 * Remove classes on the sticky element
 		 * Allow callback onUnstick
 		 */
-		function stickRemove(element) {
+		var stickRemove = function (element) {
 			element.classList.remove(self.options.classIsSticky);
 
 			// callback
 			if ('function' === typeof self.options.onUnstick) {
 				self.options.onUnstick();
 			}
-		}
+		};
 
 		/**
 		 * Main build function
 		 * 1. Add the content class when loading, if the input's value is already defined
 		 * 2. Fire events when focus and blur happen
 		 */
-		function build() {
+		var init = function () {
 			if (self.sticky) {
 				window.addEventListener('scroll', function() {
 					var hasStickyClass = self.sticky.classList.contains(self.options.classIsSticky);
@@ -108,7 +104,7 @@
 					}
 				});
 			}
-		}
+		};
 
 
 		init();
