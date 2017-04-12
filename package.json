@@ -1,16 +1,13 @@
 {
-  "name": "js-izzi-sticky",
+  "name": "izzi-sticky",
   "version": "2.0.2",
   "description": "A lightweight and simple plugin to have sticky stuff.",
   "main": "gulpfile.js",
   "scripts": {
-	"start": "gulp build && gulp watch",
+    "start": "gulp build && gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EmmanuelBeziat/js-izzi-sticky.git"
-  },
+  "repository": "git+https://github.com/EmmanuelBeziat/izzi-sticky.git",
   "keywords": [
     "sticky",
     "javascript"
@@ -18,9 +15,9 @@
   "author": "EmmanuelBeziat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EmmanuelBeziat/js-izzi-sticky/issues"
+    "url": "https://github.com/EmmanuelBeziat/izzi-sticky/issues"
   },
-  "homepage": "https://github.com/EmmanuelBeziat/js-izzi-sticky#readme",
+  "homepage": "https://github.com/EmmanuelBeziat/izzi-sticky#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",

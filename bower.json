@@ -11,10 +11,10 @@
     "sticky",
     "javascript"
   ],
-  "homepage": "https://github.com/EmmanuelBeziat/js-izzi-sticky",
+  "homepage": "https://github.com/EmmanuelBeziat/izzi-sticky",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EmmanuelBeziat/js-izzi-sticky"
+    "url": "https://github.com/EmmanuelBeziat/izzi-sticky"
   },
   "ignore": [
       "**/.*",
