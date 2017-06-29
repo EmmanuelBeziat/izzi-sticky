@@ -2,7 +2,7 @@
   "name": "izzi-sticky",
   "version": "2.0.2",
   "description": "A lightweight and simple plugin to have sticky stuff.",
-  "main": "gulpfile.js",
+  "main": "bin/izzi-tabs.min.js",
   "scripts": {
     "start": "gulp build && gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
