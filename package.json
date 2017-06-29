@@ -26,6 +26,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-stylus": "^2.6.0",
-    "gulp-uglify": "^2.0.1"
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "process-nextick-args": "^1.0.7"
   }
 }
