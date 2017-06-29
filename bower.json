@@ -2,7 +2,7 @@
   "name": "IzziSticky",
   "version": "2.0.2",
   "description": "A lightweight and simple plugin to have sticky stuff.",
-  "main": "dist/js/izzi-sticky.min.js",
+  "main": "dist/izzi-sticky.min.js",
   "authors": [
     "EmmanuelBeziat"
   ],
