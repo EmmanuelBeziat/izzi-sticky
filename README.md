@@ -24,7 +24,7 @@ Or you could just download the files on GitHub.
 # How to use
 
 ```javascript
-var izziSticky = new IzziSticky('[data-sticky');
+var izziSticky = new IzziSticky('[data-sticky]');
 ```
 
 ```html
