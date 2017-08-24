@@ -41,7 +41,7 @@ You can also pass options to the plugin to change it’s default settings, like 
 
 ```javascript
 var izziSticky = new IzziSticky('[data-sticky]', {
-	heightValue: 200 // 200px
+	heightValue: 200, // 200px
 	classIsSticky: 'is-sticky'
 });
 ```
